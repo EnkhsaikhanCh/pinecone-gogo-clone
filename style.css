@@ -3,7 +3,7 @@
 }
 
 body {
-  margin: 0;
+  margin: 0 10px;
 }
 
 main {
@@ -13,9 +13,25 @@ main {
   /* border: 2px solid blue; */
 }
 
+.display-flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.algin-center {
+  align-items: center;
+}
+
 .container {
   margin: 0 auto;
   max-width: 1100px;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .box {
@@ -29,35 +45,30 @@ main {
   align-items: center;
 }
 
-.l-header {
-  width: 100%;
-  display: flex;
-  /* border: 2px solid red; */
+/* Header - (Grid) */
+.l-header-grids {
+  display: grid;
+  grid-template-columns: 70px 2fr 1fr;
+  height: 50px;
 }
 
-.l-header-logo {
-  width: 90px;
-}
-
-.l-header-menu {
-  width: 90px;
-}
-
-.l-header-weather {
-  width: 270px;
-  flex: 1;
-}
-
-.l-article {
-  background-color: #999;
-  border: 1px SOLID #222;
+.l-header-grid {
+  border: 1px solid #222;
+  background-color: lightsalmon;
+  opacity: 0.8;
   border-radius: 10px;
-  opacity: 0.5;
+}
+
+/* Big news box */
+.l-big-news {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: lightsalmon;
+  opacity: 0.8;
   height: 300px;
-  width: 100%px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: 1px solid #222;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .l-boxes {
@@ -110,32 +121,12 @@ main {
 /* ----------------- */
 .l-two-column {
   display: flex;
-  /* gap: 10px; */
-}
-
-/* .l-column {
-    float: left;
-    height: 100px;
-    width: 100%;
-    border: 1px solid #222;
-    border-radius: 8px;
-    background-color: #999;
-    opacity: 0.5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  } */
-
-.l-column {
-  height: 0;
-  width: 0;
 }
 
 .l-main-column {
   float: left;
   height: 200px;
   width: 100%;
-  /* padding: 10px; */
   border: 1px solid #222;
   border-radius: 8px;
   background-color: #999;
@@ -146,7 +137,6 @@ main {
 }
 
 .l-left {
-  /* width: 75.5%; */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -157,66 +147,65 @@ main {
   display: none;
 }
 
-/* Interview */
-.l-interviews {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center;
-    align-items: center; */
-  gap: 10px;
+/* Interview - (Grid) */
+.grid-container {
+  display: grid;
+  height: 1200px;
+  grid-template-columns: 1fr;
+  gap: 5px;
 }
 
-.l-interview {
+.big-grid {
+  border: 1px solid #222;
+  background-color: lightsalmon;
+  opacity: 0.8;
+  border-radius: 10px;
+}
+
+.grid {
+  border: 1px solid #222;
+  background-color: lightsalmon;
+  opacity: 0.8;
+  height: 100%;
+  border-radius: 10px;
+}
+
+/* Other news - (Grid) */
+.l-other-scroll-news {
+  display: grid;
+  gap: 10px;
+  overflow-x: auto;
+  grid-gap: 10px;
+  grid-auto-flow: column;
+}
+
+.l-scroll-news {
+  border: 1px solid #222;
+  border-radius: 10px;
+  background-color: lightsalmon;
+  opacity: 0.8;
+  height: 300px;
+  width: 200px;
+}
+
+/* Live & Photo - (Grid) */
+.l-live-photos-grid {
+  border: 1px solid lightsalmon;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+}
+
+.l-live-photo-grid {
+  border: 1px solid #222;
+  background-color: lightsalmon;
+  border-radius: 10px;
   height: 250px;
   width: 100%;
-  border: 1px solid #222;
-  background-color: #999;
-  opacity: 0.5;
-  display: flex;
+  text-align: center;
   align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-}
-
-/* Life-style */
-.l-life-style-newses {
-  display: flex;
-  gap: 10px;
-  /* justify-content: space-between; */
-}
-
-.l-life-style-news {
-  height: 250px;
-  width: 250px;
-  background-color: #999;
-  opacity: 0.5;
-  border: 1px solid #222;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.l-live-photos {
-  background-color: black;
-  border: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 20px;
-  align-items: center;
-  justify-content: center;
-}
-
-.l-live-photo {
-  background-color: #cfcece;
-  border: 1px solid #222;
-  border-radius: 10px;
-  height: 200px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  opacity: 0.8;
 }
 
 .l-footer {
@@ -250,23 +239,61 @@ main {
   border-radius: 10px;
 }
 
-@media (min-width: 600px) {
-  .l-live-photos {
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
+.l-comics {
+  display: flex;
+  border: 2px solid red;
+  justify-content: center;
+  align-items: center;
+}
 
-  .l-live-photo {
-    height: 250px;
-    width: 300px;
+.l-comic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 400px;
+  border: 1px solid #222;
+  background-color: #999;
+  opacity: 0.5;
+  border-radius: 10px;
+}
+
+@media (min-width: 600px) {
+  .l-live-photos-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (min-width: 960px) {
+  .l-story {
+    width: 150px;
+    height: 235px;
+  }
   .l-boxes {
     opacity: 1;
     height: 200px;
     width: 100%;
+  }
+
+  /* Grid container */
+  .grid-container {
+    /* display: grid; */
+    grid-template-columns: 2fr 1fr 1fr;
+    height: 500px;
+    /* gap: 5px; */
+  }
+
+  .big-grid {
+    grid-row: 1/3;
+  }
+
+  /* Live & Photo - (Grid) */
+  .l-live-photos-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .l-live-photo-grid {
+    height: 315px;
   }
 
   .l-two-column {
@@ -311,14 +338,5 @@ main {
     height: 100%;
     width: 260px;
     opacity: 1;
-  }
-
-  /* Interview */
-  .l-interviews {
-    flex-direction: row;
-  }
-  .l-interview {
-    height: 250px;
-    width: 250px;
   }
 }
