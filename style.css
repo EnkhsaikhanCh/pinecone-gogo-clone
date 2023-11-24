@@ -20,13 +20,13 @@ main {
 }
 
 .box {
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
   border: 1px solid #222;
   border-radius: 10px;
-  opacity: 0.8;
+  /* opacity: 0.8;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   font-family: Montserrat;
 }
 
@@ -45,14 +45,18 @@ main {
 .l-big-news-grid {
   display: grid;
   grid-template-columns: 1fr;
-  height: 300px;
-  text-align: center;
+  height: 400px;
 }
 
-.l-big-news-grid img {
+.big-news-img img {
+  height: 400px;
   width: 100%;
-  height: 300px;
+  object-fit: cover;
   border-radius: 10px;
+}
+
+.big-news-info {
+  display: none;
 }
 
 /* Box news - (Grids) */
@@ -80,8 +84,26 @@ main {
 
 .l-main-column {
   float: left;
-  height: 200px;
+  height: 100%;
   width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.main-column-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.main-column-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid red;
+  background-color: beige;
+  border-radius: 10px;
 }
 
 .l-left {
@@ -162,6 +184,21 @@ main {
   width: 100%;
 }
 
+.live-photo-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.live-photo-info {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8em;
+  width: 50px;
+}
+
 /* Footer */
 .l-footer {
   display: flex;
@@ -212,6 +249,38 @@ main {
 }
 
 @media (min-width: 960px) {
+  .big-news-info {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+    background-color: beige;
+    border-radius: 10px;
+  }
+
+  .big-news-info button {
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(35, 249, 178);
+    font-family: Montserrat;
+  }
+
+  .big-news-info h1 {
+    font-family: Montserrat;
+  }
+
+  .l-big-news-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .l-big-news-grid img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+
   .l-story {
     width: 150px;
     height: 235px;
