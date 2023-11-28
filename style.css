@@ -1,4 +1,6 @@
 * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -31,31 +33,88 @@ main {
 }
 
 .parent-icon {
-  display: inline-flex;
+  display: flex;
   color: grey;
   font-size: smaller;
   gap: 30px;
 }
 
 .icon {
-  display: inline-flex;
-  gap: 10px;
-}
-
-.icon p {
+  margin-left: 10px;
+  display: inline;
   font-family: Montserrat;
-  margin: 0;
 }
 
 /* Header - (Grid) */
 .l-header-grids {
   display: grid;
-  grid-template-columns: 70px 2fr 1fr;
+  grid-template-columns: 70px 2fr 50px;
   height: 50px;
+  align-items: center;
+  gap: 10px;
 }
 
 .l-header-grids img {
   width: 70px;
+}
+
+.header-box {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  justify-content: start;
+}
+
+.info-box {
+  border: 0.5px solid #bdbcbc;
+  padding: 10px;
+  height: 40px;
+  font-size: smaller;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.info-box-content {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.info-box p {
+  margin: 0;
+  font-weight: 100;
+  color: rgb(58, 58, 58);
+}
+
+.info-box-content i {
+  font-size: large;
+}
+
+.info-box-content p {
+  font-weight: bold;
+  font-size: medium;
+  color: black;
+}
+
+.menu {
+  border: 0.5px solid #bdbcbc;
+  height: 40px;
+  width: 50px;
+  border-radius: 5px;
+}
+
+.menu i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100%;
+  width: 100%;
 }
 
 /* Big news box - (Grid) */
@@ -74,6 +133,32 @@ main {
 
 .big-news-info {
   display: none;
+}
+
+/* BIg box news 2 */
+.l-big-news-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  position: relative;
+}
+
+.l-big-news-2 img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.big-news-2-content {
+  position: absolute;
+  bottom: 0;
+  color: white;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+
+.big-news-2-content h1 {
+  margin: 0;
 }
 
 /* Box news - (Grids) */
@@ -147,23 +232,112 @@ main {
   margin: 0;
 }
 
-.l-left-grid-content p {
+/* .l-left-grid-content p {
   font-family: Montserrat;
   font-size: small;
   margin: 0;
   color: grey;
-}
+} */
 
 /* Interview - (Grid) */
 .interview-grids {
   display: grid;
-  height: 1200px;
+  /* height: 1200px; */
   grid-template-columns: 1fr;
   gap: 5px;
 }
 
 .interview-grid {
   height: 100%;
+}
+
+.intreview-img {
+  display: flex;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.big-interview-grid {
+  position: relative;
+}
+
+.interview-grid {
+  position: relative;
+}
+
+.interview-content-big {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.3);
+  color: #f1f1f1;
+  padding: 20px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.interview-content-big h1 {
+  margin: 0;
+  font-size: medium;
+}
+
+.interview-type-button {
+  border: none;
+  height: 30px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: rgb(51, 100, 216);
+  color: white;
+}
+.interview-content {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.3);
+  color: #f1f1f1;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.interview-content h1 {
+  margin: 0;
+  font-size: medium;
+}
+
+.divider {
+  border: 0.1px solid white;
+}
+
+.interview-button {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  background: rgb(32, 104, 164);
+  background: linear-gradient(
+    90deg,
+    rgba(32, 104, 164, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: white;
+  transition: all 0.4s ease-in-out;
+}
+
+.interview-button:hover {
+  background: rgb(32, 82, 164);
+  background: linear-gradient(
+    90deg,
+    rgba(32, 82, 164, 1) 0%,
+    rgba(0, 179, 255, 1) 100%
+  );
 }
 
 /* Other news - (Grid) */
@@ -263,6 +437,10 @@ main {
     grid-column: 1/3;
   }
 
+  .interview-content {
+    height: 100px;
+  }
+
   .l-scroll-news-grid {
     width: calc(30vh - 40 / 2);
   }
@@ -311,6 +489,10 @@ main {
     width: 100%;
     height: 100%;
     border-radius: 10px;
+  }
+
+  .interview-content {
+    height: 30%;
   }
 
   .l-story {
@@ -384,6 +566,10 @@ main {
   .big-interview-grid {
     grid-row: 1/3;
     grid-column: unset;
+  }
+
+  .interview-content {
+    height: 120px;
   }
 
   /* Live & Photo - (Grid) */
