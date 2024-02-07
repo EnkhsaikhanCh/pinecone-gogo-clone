@@ -527,6 +527,27 @@ main {
 .l-comic-grid {
   height: 250px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.l-comic-grid img {
+  object-fit: cover;
+  height: 60%;
+  width: 100%;
+}
+
+.comic-content {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.comic-content p {
+  margin: 0;
 }
 
 .l-comic-grid:nth-child(n + 2) {
@@ -570,8 +591,21 @@ main {
 }
 
 .l-footer1 {
-  height: 100px;
+  height: 150px;
   flex-direction: column;
+}
+
+.footer-btns {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  justify-content: center;
+}
+
+.l-footer1 button {
+  background: none;
+  border: none;
 }
 
 .l-footer2 {
@@ -921,7 +955,7 @@ main {
   }
 
   .l-comic-grid {
-    width: 300px;
+    width: 500px;
   }
 
   .l-comic-grid:nth-child(n + 1) {
